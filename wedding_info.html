@@ -61,19 +61,21 @@
               <tbody>
                 <tr>
                   <td>Wedding Ceremony</td>
-                  <td>TBD</td>
-                  <td>TBD<td>
+                  <td>09.16.17<br>1:00 PM</td>
+                  <td>San Fernando<br>Cathedral</td>
+                  <td id="mapFernando" style="width:200px;height:200px;background:yellow"><iframe</td>
                 </tr>
                 <tr>
                   <td>Wedding Reception</td>
-                  <td>TBD</td>
-                  <td>TBD</td>
+                  <td>09.16.17<br>3:00 PM</td>
+                  <td>Zaza Gardens</td>
+                  <td id="mapZaza" style="width:200px;height:200px;background:yellow"></td>
                 </tr>
                 <tr>
                   <td>Rehearsal Dinner</td>
-                  <td> Sept. 15, 2015 7:30 PM PM CST</td>
+                  <td>09.15.17 <br>7:30 PM</td>
                   <td>Casa Rio</td>
-                  <td id="map" style="width:200px;height:200px;background:yellow"></td>
+                  <td id="mapCasa" style="width:200px;height:200px;background:yellow"></td>
                 </tr>
                 <tr>
                   <td>Bachelor Party</td>
@@ -127,21 +129,52 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script>
-      function casaRioMap() {
-        var mapCanvas = document.getElementById("map");
-        var myLatLngCasaRio = {lat: 29.42363, lng: -98.488157};
-        var mapOptions = {
+
+    function initialize(){
+      var myLatLngCasaRio = {lat: 29.42363, lng: -98.488157};
+      var myLatLngZaza = {lat: 29.4166563, lng: -98.5012011};
+      var myLatLngFernando = {lat: 29.4245368, lng: -98.4941629};
+
+
+        var mapCanvasCasaRio = document.getElementById("mapCasa");
+        var mapOptionsCasaRio = {
           center: myLatLngCasaRio,
           zoom: 14
         }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var mapCasaRio = new google.maps.Map(mapCanvasCasaRio, mapOptionsCasaRio);
         var markerCasa = new google.maps.Marker({
           position: myLatLngCasaRio,
-          map: map
+          map: mapCasaRio
         });
-      }
+
+
+          var mapCanvasZaza = document.getElementById("mapZaza");
+
+          var mapOptionsZaza = {
+            center: myLatLngZaza,
+            zoom: 14
+          }
+          var mapZaza = new google.maps.Map(mapCanvasZaza, mapOptionsZaza);
+          var markerZaza= new google.maps.Marker({
+            position: myLatLngZaza,
+            map: mapZaza
+          });
+
+
+          var mapCanvasFernando = document.getElementById("mapFernando");
+
+          var mapOptionsFernando = {
+            center: myLatLngFernando,
+            zoom: 14
+          }
+          var mapFernando= new google.maps.Map(mapCanvasFernando, mapOptionsFernando);
+          var markerFernando = new google.maps.Marker({
+            position: myLatLngFernando,
+            map: mapFernando
+          });
+
+    };
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2CLylokYlsq56xt4rHpamsIvtu2Ig_is&callback=casaRioMap"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2CLylokYlsq56xt4rHpamsIvtu2Ig_is&callback=initialize"></script>
   </body>
 </html>

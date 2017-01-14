@@ -56,6 +56,7 @@
                   <th>Category</th>
                   <th>Time</th>
                   <th>Place</th>
+                  <th>Map</th>
               </thread>
               <tbody>
                 <tr>
@@ -69,9 +70,10 @@
                   <td>TBD</td>
                 </tr>
                 <tr>
-                  <td>Rehursal Dinner</td>
-                  <td>TBD</td>
-                  <td>TBD</td>
+                  <td>Rehearsal Dinner</td>
+                  <td> Sept. 15, 2015 7:30 PM PM CST</td>
+                  <td>Casa Rio</td>
+                  <td id="map" style="width:200px;height:200px;background:yellow"></td>
                 </tr>
                 <tr>
                   <td>Bachelor Party</td>
@@ -123,8 +125,23 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script>
+      function casaRioMap() {
+        var mapCanvas = document.getElementById("map");
+        var myLatLngCasaRio = {lat: 29.42363, lng: -98.488157};
+        var mapOptions = {
+          center: myLatLngCasaRio,
+          zoom: 14
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var markerCasa = new google.maps.Marker({
+          position: myLatLngCasaRio,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2CLylokYlsq56xt4rHpamsIvtu2Ig_is&callback=casaRioMap"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

@@ -39,7 +39,7 @@
       <div class="col-sm-2 blog-main">
         <img class="img-circle img-thumbnail announcements profile" width="100" height="100" src="profile.jpg"></img>
       </div>
-      <p class="blog-main announcements">As of yet, the plans are still in progress. Anything that is labeled as TBD will be updated as soon as a decision has been made.<br>If you have any helpful suggestions, tips, tricks or you just want to have a good chat, plase message me!</p>
+      <p class="blog-main announcements">So,good news! We have most of the plans laid out. Please see the table below. <br> If you have any question about the party, please reach out to me! But I will warn you that dancing will be a big part of the celebrations!</p>
     </div>
     <hr>
     <div class="container">
@@ -84,8 +84,9 @@
                 </tr>
                 <tr>
                   <td>Bachelorette Party</td>
-                  <td>TBD</td>
-                  <td>TBD</td>
+                  <td>09.14.2017 <br>5:00 PM</td>
+                  <td>Dough</td>
+		  <td id="mapDough" style="width:200px;height:200;background:yellow"></td>  
                 </tr>
                 <tr>
                   <td>Gift Registry</td>
@@ -134,7 +135,7 @@
       var myLatLngCasaRio = {lat: 29.42363, lng: -98.488157};
       var myLatLngZaza = {lat: 29.4166563, lng: -98.5012011};
       var myLatLngFernando = {lat: 29.4245368, lng: -98.4941629};
-
+      var myLatLngDough = {lat:29.5192833,lng:-98.5075335};
 
         var mapCanvasCasaRio = document.getElementById("mapCasa");
         var mapOptionsCasaRio = {
@@ -172,6 +173,18 @@
             position: myLatLngFernando,
             map: mapFernando
           });
+	  
+          var mapCanvasDough = document.getElementById("mapDough");
+
+          var mapOptionsDough = {
+            center: myLatLngDough,
+            zoom: 14
+          }
+          var mapDough= new google.maps.Map(mapCanvasDough, mapOptionsDough);
+          var markerDough = new google.maps.Marker({
+            position: myLatLngDough,
+            map: mapDough
+          }); 	  
 
     };
     </script>

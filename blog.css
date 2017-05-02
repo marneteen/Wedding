@@ -110,7 +110,10 @@ h6, .h6 {
 /*
  * Main column and sidebar layout
  */
-
+.button{
+  background-color: #4F2135;
+  color: #333;
+}
 .blog-main {
   font-size: 18px;
   line-height: 1.5;

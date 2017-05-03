@@ -3,7 +3,8 @@
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+;
   color: #333;
 }
 hr {
@@ -56,7 +57,7 @@ h6, .h6 {
   padding: 10px;
   font-weight: 500;
   color: #fff;
-  font-family: serif;
+  font-family: Helvetica;
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
